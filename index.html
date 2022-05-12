@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Logat Logistica Integral">
+    <meta name="revisit-after" content="15 days">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="es"/>
+    <meta http-equiv="refresh" content="600">    
+    <meta property="og:type" content="website">
+	<meta property="og:site_name" content="LOGAT | Logística Integral">
+	
+	<meta property="og:url" content="http://logat.com.ar">
+	<meta property="og:image" content="http://logat.com.ar/images/logistica/logat_icono.png" >
+	<meta property="og:locale" content="es_AR">
+    <meta name="Keywords" content="Transporte, Logistica, Almacenamiento, Centro de Distribucion y almacenamiento, transporte punto a punto"/>
+    
+	<meta property="og:title" content="Inicio | LOGAT | Logística Integral">
+	<meta name="description" property="og:description" content="Logat - Servicio de Logistica Integral, transporte y almacenamiento con oficinas comerciales en Buenos Aires, Sante fe y Córdoba. Gestionamos su E-commerce">
+   	
+	
+    <title>LOGAT | Logística Integral</title>
+	
+	<!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+	
+	<!-- Banner -->
+	<link href="css/banner.css" rel="stylesheet">
+    
+	
+	
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <script async src="js/jquery.js"></script>	
+	<script async type="text/javascript">
+	$(function(){
+	 $("#send_form").click(function(){
+	 var url = "contact_me.php"; // El script a dónde se realizará la petición.
+		$.ajax({
+			   type: "POST",
+			   url: url,
+			   data: $("#customForm").serialize(), // Adjuntar los campos del formulario enviado.
+			   success: function(data){
+			   //$("#enviado").html('<p class="alert alert-info">Mensaje Enviado!</p>'); // Mostrar la respuestas del script PHP.
+			     resultado = data;
+               if (resultado == '1'){
+                $("#data").html('<p class="alert alert-danger">No se puede enviar el mensaje mientras tenga campos vacios.</p>');                
+            }
+            else if(resultado == 'true') {
+                $("#data").html('<p class="alert alert-info">Mensaje enviado. Pronto te contactaremos </p>');
+                $('button[type="submit"]').attr('disabled','disabled');
+               $('button[type="submit"]').removeClass("btn btn-primary btn-block btn-lg");
+               $('button[type="submit"]').addClass("btn btn-success btn-block btn-lg");
+            }else{
+                $("#data").html('<p class="alert alert-danger">No se puede entregar el mensaje, escribinos ventas@logat.com.ar.</p>');      
+               
+                }
+			   }
+			 });
+		return false; // Evitar ejecutar el submit del formulario.
+	 });
+	});
+	</script>
+</head><!--/head-->
+
+<body class="homepage">
+
+    <header id="header">
+        
+		<div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-9 col-xs-7">
+                        <div class="top-number">
+												<p> 
+													
+													<small>
+														<i class="fa fa-envelope"></i>  
+														<a href="mailto:ventas@logat.com.ar" style="color: white;">ventas@logat.com.ar </a> 
+													</small>
+												</p>
+						</div>
+                    </div>
+                    <div class="col-sm-3 col-xs-5">
+                       <div class="social">
+                            <ul class="social-share">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                            <!--/
+							<div class="search">
+                                <form role="form">
+                                    <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+                                    <i class="fa fa-search"></i>
+                                </form>
+                           </div>
+						   -->
+                       </div>
+                    </div>
+                </div>
+            </div><!--/.container-->
+        </div><!--/.top-bar-->
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/LOGOAT.png" class="img-responsive" width="200px" height="60px" alt="logo"></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Inicio</a></li>
+                        <li><a href="quienes-somos.html">Quienes Somos</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Divisiones <i class="fa fa-angle-down"></i></a>
+                             <ul class="dropdown-menu">
+                                <li><a href="almacenamiento.html">Almacenamiento</a></li>
+                                <li><a href="express.html">Express</a></li>
+                                <li><a href="transporte.html">Transporte</a></li>
+                                <li><a href="comercio-internacional.html">Comercio Internacional</a></li>
+                                <li><a href="e-commerce.html">E-commerce</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="flota.html">Flota</a></li>
+                        <!--/
+						<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="blog-item.html">Blog Single</a></li>
+                                <li><a href="pricing.html">Pricing</a></li>
+                                <li><a href="404.html">404</a></li>
+                                <li><a href="shortcodes.html">Shortcodes</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Blog</a></li> 
+						-->
+                        <li><a href="contacto.html">Contacto</a></li>                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+		
+    </header><!--/header-->
+	
+	
+
+        <div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000">
+			<!-- Wrapper For Slides -->
+            <div class="carousel-inner" role="listbox">
+
+                <!-- Third Slide -->
+                <div class="item active">
+					<!-- Slide Background -->
+                    <img src="images/logistica/TRANSPORTE.png" alt="Bootstrap Touch Slider"  class="slide-image responsive"/>
+                    <div class="bs-slider-overlay"></div>
+
+                    <div class="container">
+                        <div class="row">
+                            <!-- Slide Text Layer -->
+                            <div class="slide-text slide_style_right">
+                                <h1 data-animation="animated zoomInRight">LOGAT</h1>
+                                <p data-animation="animated fadeInLeft"><i>"Brindamos soluciones logísticas integrales."</i></p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Slide -->
+			
+			</div><!-- End of Wrapper For Slides -->
+		</div> <!-- End  bootstrap-touch-slider Slider -->
+        
+	
+	
+    <section id="feature" >
+        <div class="container">
+		
+           <div class="col-lg-8 col-lg-offset-2 center wow fadeInDown">
+                <h2>LOGÍSTICA INTEGRAL</h2>
+                <p class="lead"><b>LOGAT</b> es la nueva imagen de una empresa familiar, con más de 50 años de experiencia en el mercado 
+								del transporte general de cargas. Utilizamos tecnología de vanguardia, métodos modernos de gestión y una constante 
+								curiosidad por ampliar negocios y mercados posicionándonos así como una opción idónea, flexible y confiable:</p>
+            </div>
+
+            <div class="row">
+                <div class="features">
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-puzzle-piece" aria-hidden="true"></i>
+                            <h2>MISIÓN</h2>
+                            <p class="lead">Brindarle al cliente tranquilidad y seguridad de que sus bienes están protegidos.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-bullseye" aria-hidden="true"></i>
+                            <h2>OBJETIVO</h2>
+                            <p class="lead">Apuntamos a poder cubrir todas las necesidades en la cadena operativa con transporte y distribución.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                            <h2>ALCANCE</h2>
+                            <p class="lead"> Queremos conectar mas provincias y ciudades, vemos el potencial de crecimiento en muchas zonas.</p>
+                        </div>
+                    </div><!--/.col-md-4-->
+                
+                    
+                </div><!--/.services-->
+            </div><!--/.row-->    
+        </div><!--/.container-->
+		
+    </section><!--/#feature-->
+	
+    <section id="services" class="service-item">
+		<center>
+		    <div class="container">
+				<div class="center wow fadeInDown">
+					<h2>NUESTROS SERVICIOS</h2>
+					
+				</div>
+
+				<div class="row">
+					<div class="col-md-1"></div>
+					<div class="col-xs-12 col-sm-6 col-md-2" style="padding-right: 5px; padding-left: 5px;">
+						<div class="media services-wrap wow fadeInDown">
+							<div class="">
+								<img class="img-responsive" src="images/services/almacenamiento1.png" alt="almacenamiento">
+							</div>
+							<div class="media-body">
+								<h3 class="media-heading"><font size="2.5">Almacenamiento</font></h3>
+								<p>Centros de Distribución</p>
+								<a href="almacenamiento.html" class="btn btn-default">Ver Más...</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12 col-sm-6 col-md-2" style="padding-right: 5px; padding-left: 5px;">
+						<div class="media services-wrap wow fadeInDown">
+							<div class="">
+								<img class="img-responsive" src="images/services/express1.png" alt="entregas-expres">
+							</div>
+							<div class="media-body">
+								<h3 class="media-heading"><font size="2.5">Express</font></h3>
+								<p>Servicio de cargas parciales</p>
+								<a href="express.html" class="btn btn-default">Ver Más...</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12 col-sm-6 col-md-2" style="padding-right: 5px; padding-left: 5px;">
+						<div class="media services-wrap wow fadeInDown">
+							<div class="">
+								<img class="img-responsive" src="images/services/transporte1.png" alt="transporte-paqueteria">
+							</div>
+							<div class="media-body">
+								<h3 class="media-heading"><font size="2.5">Transporte</font></h3>
+								<p>Integral Punto a Punto</p>
+								<a href="transporte.html" class="btn btn-default">Ver Más...</a>
+							</div>
+						</div>
+					</div>  
+
+					<div class="col-xs-12 col-sm-6 col-md-2" style="padding-right: 5px; padding-left: 5px;">
+						<div class="media services-wrap wow fadeInDown">
+							<div class="">
+								<img class="img-responsive" src="images/services/internacional1.png" alt="envios-Internacionales">
+							</div>
+							<div class="media-body">
+								<h3 class="media-heading"><font size="2.5">Internacional</font></h3>
+								<p>Gestionamos operaciones</p>
+								<a href="comercio-internacional.html" class="btn btn-default">Ver Más...</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12 col-sm-6 col-md-2" style="padding-right: 5px; padding-left: 5px;">
+						<div class="media services-wrap wow fadeInDown">
+							<div class="">
+								<img class="img-responsive" src="images/services/ecommerce1.png" alt="Gestion-Ecommerce">
+							</div>
+							<div class="media-body">
+								<h3 class="media-heading"><font size="2.5">Ecommerce</font></h3>
+								<p>Distribuimos productos</p>
+								<a href="e-commerce.html" class="btn btn-default">Ver Más...</a>
+							</div>
+						</div>
+					</div>
+
+																 
+				</div><!--/.row-->
+			</div><!--/.container-->
+		</center>
+    </section><!--/#services-->
+	
+	
+    <section id="conatcat-info">
+        <div class="container wow fadeInDown">
+            <div class="row">
+				
+                
+                <div class="col-lg-12 col-lg-offset-0 text-center">
+                    <form name="customForm" id="customForm" class="contact-form row" method="post" enctype="multipart/form-data">
+						<div class="col-md-3 col-lg-offset-1">
+							<h2>ENVÍANOS SU CONSULTA!</h2>
+							<p class="lead">Envíenos su mensaje y nos contactaremos a la brevedad.</p>
+								<ul class="social-share">
+									<li><a href="#" style="width: 40px; height: 40px;"><i class="fa fa-facebook fa-3x"></i></a></li>
+									<li><a href="#" style="width: 40px; height: 40px;"><i class="fa fa-twitter fa-3x"></i></a></li>
+								</ul>
+						</div>
+						<div class="col-md-3 col-lg-offset-1">
+							<div class="col-md-12">
+								<label></label>
+								<input type="text" class="form-control input-sm" placeholder="NOMBRE" id="name" name="name" required>
+							</div>
+							<div class="col-md-12">
+								<label></label>
+								<input type="email" class="form-control input-sm" placeholder="EMAIL" id="email" name="email" required>
+							</div>
+							<div class="col-md-12">
+								<label></label>
+								<input type="tel" class="form-control input-sm" placeholder="TELÉFONO" id="phone" name="phone" required>
+							</div>
+							<div class="col-md-12">
+								<label></label>
+								<input type="text" class="form-control input-sm" placeholder="ASUNTO" id="asunto" name="asunto" required>
+							</div>
+						</div>
+                        <div class="col-md-3 col-xs-12 col-lg-offset-0" >
+                            <label></label>
+                            <textarea class="form-control input-sm" rows="7" placeholder="ESCRIBE SU MENSAJE AQUÍ.." id="message" name="message" required></textarea>
+
+							<button type="submit" id="send_form" name="send_form" class="btn btn-primary btn-block btn-lg">ENVIAR<i class="ion-android-arrow-forward"></i></button>         
+							<div id="data"> </div>
+                        </div>                        
+                    </form>
+					
+                </div>
+            </div>
+        </div>  
+    </section><!--/#conatcat-info-->
+
+    <section id="bottom">
+        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="row">
+                <div class="col-xs-12 col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>Empresa</h3>
+                        <ul>
+                            <li><a class="navbar-brand" href="index.html"><img src="images/logistica/logat_logotipo.jpg" class="img-responsive thumbnail" width="200px" height="60px" alt="logo"></a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+				
+				<div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>Divisiones</h3>
+                        <ul>
+                            <li><a href="almacenamiento.html">Almacenamiento</a></li>
+                            <li><a href="express.html">Express</a></li>
+                            <li><a href="transporte.html">Transporte</a></li>
+                            <li><a href="comercio-internacional.html">Comercio Internacional</a></li>
+							<li><a href="e-commerce.html">E-commerce</a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>Accesos</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="quienes-somos.html">Quienes Somos</a></li>
+                            <li><a href="almacenamiento.html">Unidades de Negocio</a></li>
+                            <li><a href="flota.html">Flota</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>Comunicación</h3>
+                        <ul>
+                            
+                            <li> <a href="mailto:ventas@logat.com.ar"><i style="color:white;" class="fa fa-envelope"></i> ventas@logat.com.ar </a> </li>
+                            <li> <a href="#"><i style="color:white;" class="fa fa-globe" aria-hidden="true"></i> Córdoba, Argentina</a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+			</div>
+        </div>
+    </section><!--/#bottom-->
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12" align="center">
+                    &copy; 2017 Desarrollado por <a target="_blank" href="http://vipi.com.ar/index.html" title="Desarrollado por VIPI Desarrollo y Aseroramiento Web"> VIPI Desarrollo y Aseroramiento Web</a>. Todos los derechos Reservados.
+                </div>
+            </div>
+        </div>
+	<a class="go-top" href="#"><i class="fa fa-angle-double-up fa-2x" aria-hidden="true"></i></a>
+    </footer><!--/#footer-->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wow.min.js"></script>
+	
+	<!--BANNER-->
+	<script src="js/banner.js"></script>
+	
+	<!-- JavaScript -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			// Show or hide the sticky footer button
+			$(window).scroll(function() {
+				if ($(this).scrollTop() > 200) {
+					$('.go-top').fadeIn(200);
+				} else {
+					$('.go-top').fadeOut(200);
+				}
+			});
+
+			// Animate the scroll to top
+			$('.go-top').click(function(event) {
+				event.preventDefault();
+
+				$('html, body').animate({scrollTop: 0}, 300);
+			})
+		});
+	</script>
+</body>
+</html>
